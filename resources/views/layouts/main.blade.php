@@ -26,7 +26,6 @@
     <footer class="text-center p-4 mt-8 shadow-inner">
         <p>Gemaakt met Laravel</p>
         <p>Uitgevoerd met Docker</p>
-        <p>Ontwikkelaar: Milan Pallas</p>
     </footer>
 </body>
 </html>
