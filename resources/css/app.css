@@ -9,3 +9,79 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--highlight); 
+}
+
+
+body {
+    background-color: var(--background);
+}
+
+nav {
+    background-color: var(--primary);
+}
+
+
+footer {
+    width: auto;
+    background-color: var(--primary);
+    border-top: 2px solid var(--highlight);
+}
+
+p, a, button {
+    color: var(--text);
+}
+
+h1, h2, .highlight {
+    color: var(--highlight);
+}
+
+
+.kleur {
+    background-color: var(--secondary);
+    color: var(--text);
+    border: none;
+    font-size: medium;
+    padding: 4px;
+    margin: 1px;
+    text-align: center;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.kleur:hover {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.kleur:nth-child(2):hover {
+    background-color: #eeeeee;
+    color: #61876E;
+}
+.kleur:nth-child(3):hover {
+    background-color: #000000;
+    color: #e47b41;
+}
+.kleur:nth-child(6):hover {
+    background-color: #FF6666;
+    color: #FFEADD;
+}
+.kleur:nth-child(4):hover {
+    background-color: #3C6255;
+    color: #EAE7B1;
+}
+.kleur:nth-child(5):hover {
+    background-color: #363062;
+    color: #F5E8C7;
+}

@@ -6,6 +6,7 @@
     
     <!-- css link -->
     @vite(['resources/css/app.css'])
+    @vite(['public/themes/' . session('theme') . '.css'])
     <title>Main</title>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -23,9 +24,10 @@
         </div>
     </main>
 
-    <footer class="text-center p-4 mt-8 shadow-inner">
+    <footer class="text-center text-sm p-2 mt-8 shadow-inner">
         <p>Gemaakt met Laravel</p>
         <p>Uitgevoerd met Docker</p>
+        <p>Voor het laatst bewerkt op: <span></span></p>
     </footer>
 </body>
 </html>
