@@ -1,10 +1,14 @@
 @extends('layouts.main')
 
 @section('header')
-    <h1 class="text-4xl">Hoofdpagina</h1>
+    <section>
+
+    </section>
 @endsection
 
 
 @section('main')
-
+    <section>
+        
+    </section>
 @endsection
