@@ -6,7 +6,7 @@
     
     <!-- css link -->
     @vite(['resources/css/app.css'])
-    @vite(['public/themes/' . session('theme') . '.css'])
+    <link rel="stylesheet" href="{{ asset('themes/' . strtolower(session('theme') ?? 'basis wit') . '.css') }}">
     <title>Main</title>
 </head>
 <body class="min-h-screen flex flex-col">
