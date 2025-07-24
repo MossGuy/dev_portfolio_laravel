@@ -27,7 +27,7 @@
     <footer class="text-center text-sm p-2 mt-8 shadow-inner">
         <p>Gemaakt met Laravel</p>
         <p>Uitgevoerd met Docker</p>
-        <p>Voor het laatst bewerkt op: <span></span></p>
+        <p>Voor het laatst bewerkt op: <span class="highlight">24-7-2025</span></p>
     </footer>
 </body>
 </html>
