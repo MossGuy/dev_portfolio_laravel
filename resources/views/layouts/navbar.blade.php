@@ -11,7 +11,7 @@
         <div class="flex items-center space-x-4 rtl:space-x-reverse">
             <button 
                 @click="showFilters = !showFilters" 
-                class="cursor-pointer font-medium hover:underline"
+                class="cursor-pointer font-medium hover:underline highlight"
                 type="button"
             >
                 Kleuren Thema
