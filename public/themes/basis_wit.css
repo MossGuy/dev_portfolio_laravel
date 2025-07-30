@@ -1,8 +1,13 @@
 :root {
-    --primary: #f0f0f0;
-    --secondary: #cfcfcf;
-    --background: #ffffff;
-    --highlight: #4F6F52;
-    --text: #1e1e1e;
-    --textbox: #cfcfcf;
+  --primary:   #2E2E2E;
+  --secondary: #B0B0B0;
+  --background:#F5F5F5;
+  --highlight: #4F6F52;
+  --text:      #1A1A1A; 
+  --textbox:   #ffffff;
+}
+
+
+.kader {
+    background-image: url('../images/kaders/kader_groen.png'), linear-gradient(to top, var(--secondary), var(--background));
 }

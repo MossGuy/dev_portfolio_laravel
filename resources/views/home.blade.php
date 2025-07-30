@@ -1,14 +1,34 @@
 @extends('layouts.main')
 
-@section('header')
-    <section>
-
-    </section>
-@endsection
-
-
 @section('main')
-    <section>
-        
+    <section class="kader my-5 rounded-lg flex flex-col md:flex-row justify-evenly items-center">
+        <img src="{{ asset('images/ik.jpg') }}" class="w-100 md:w-50 rounded-lg mt-2 mb-15 border border-4" alt="Foto van mijzelf"/>
+        <ul class=" text-lg font-semibold p-4">
+            <li class="text-2xl font-semibold">Ik ben:</li>
+            <li>
+                <i class="bi bi-code-slash"></i>
+                <span class="highlight">Junior web developer</span>
+            </li>
+            <li>
+                <i class="bi bi-music-note-list"></i>
+                <span class="highlight">Muziekant</span>
+            </li>
+            <li>
+                <i class="bi bi-controller"></i>
+                <span class="highlight">Gamer</span>
+            </li>
+            <li>
+                <i class="bi bi-flower2"></i>
+                <span class="highlight">Planten verzorger</span>
+            </li>
+            <li>
+                <i class="bi bi-emoji-smile"></i>
+                <span class="highlight">Certified weeb</span>
+            </li>
+        </ul>
     </section>
+
+
+    <section class="flex flex-col items-center justify-center h-full my-2 p-4 rounded-lg shadow-lg">
+        <p>sectie met programmeer talen / frameworks die ik ken</p>
 @endsection

@@ -6,3 +6,7 @@
     --text: #ffffff;
     --textbox: #ffffff;
 }
+
+.kader {
+    background-image: url('../images/kaders/kader_oranje.png'), linear-gradient(to top, var(--secondary), var(--background));
+}

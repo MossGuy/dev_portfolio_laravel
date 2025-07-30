@@ -4,7 +4,7 @@
     <!-- Header -->
     <section class="shadow-md flex justify-between items-center p-4">
         <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{ asset('images/moss.png') }}" class="h-8" alt="Moss Logo" />
+            <img src="{{ asset('images/mr_moss.png') }}" class="h-15" alt="Moss Logo" />
             <h1 class="text-2xl font-semibold whitespace-nowrap">Moss productions</h1>
         </a>
 
@@ -43,7 +43,7 @@
                     type="submit" 
                     name="theme" 
                     value="{{ $theme }}" 
-                    class="w-36 kleur py-2 px-3 rounded bg-gray-100 hover:bg-gray-200 transition-colors"
+                    class="w-36 kleur py-2 px-3 text-lg rounded hover:cursor-pointer hover:underline"
                 >
             @endforeach
 
