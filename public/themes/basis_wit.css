@@ -1,6 +1,6 @@
 :root {
   --primary:   #333333;
-  --secondary: #706C61;
+  --secondary: #94918a;
   --background:#FFFFFF;
   --highlight: #4F6F52;
   --text:      #1A1A1A; 
@@ -9,5 +9,5 @@
 
 
 .kader {
-    background-image: url('../images/kaders/kader_groen.png'), linear-gradient(to top, var(--secondary), var(--background));
+    background-image: url('../images/kaders/kader_groen.png'), linear-gradient(to top, var(--secondary) 50%, var(--background) 100%);
 }
