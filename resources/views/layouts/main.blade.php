@@ -18,7 +18,7 @@
 
     <footer class="text-center text-sm p-2 shadow-inner border border-2">
         <p>Gemaakt met: Laravel</p>
-        <p>Kleuren thema's: <a href="colorhunt.co" class="highlight hover:underline">colorhunt.co</a></p>
+        <p>Kleuren thema's: <a href="https://colorhunt.co/" target="_blank" class="highlight hover:underline">colorhunt.co</a></p>
         <p>Voor het laatst bewerkt op: <span class="highlight">¯\_(ツ)_/¯</span></p>
     </footer>
 </body>
