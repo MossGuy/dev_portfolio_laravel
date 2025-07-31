@@ -2,7 +2,7 @@
 
 @section('main')
     <section class="kader my-5 rounded-lg flex flex-col md:flex-row justify-evenly items-center">
-        <img src="{{ asset('images/ik.jpg') }}" class="w-100 md:w-50 rounded-lg mt-2 mb-15 border border-4" alt="Foto van mijzelf"/>
+        <img src="{{ asset('images/ik.jpg') }}" class="w-100 md:w-50 rounded-lg mt-2 mb-15 border border-3" alt="Foto van mijzelf"/>
         <ul class=" text-lg font-semibold p-4">
             <li class="text-2xl font-semibold">Ik ben:</li>
             <li>
@@ -11,7 +11,7 @@
             </li>
             <li>
                 <i class="bi bi-music-note-list"></i>
-                <span class="highlight">Muziekant</span>
+                <span class="highlight">Muzikant</span>
             </li>
             <li>
                 <i class="bi bi-controller"></i>
@@ -23,7 +23,7 @@
             </li>
             <li>
                 <i class="bi bi-emoji-smile"></i>
-                <span class="highlight">Certified weeb</span>
+                <span class="highlight">Anime fan</span>
             </li>
         </ul>
     </section>

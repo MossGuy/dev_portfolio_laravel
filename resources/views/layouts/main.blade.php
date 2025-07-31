@@ -17,9 +17,9 @@
     </main>
 
     <footer class="text-center text-sm p-2 shadow-inner border border-2">
-        <p>Gemaakt met Laravel</p>
-        <p>Uitgevoerd met Docker</p>
-        <p>Voor het laatst bewerkt op: <span class="highlight">24-7-2025</span></p>
+        <p>Gemaakt met: Laravel</p>
+        <p>Kleuren thema's: <span class="highlight"></span></p>
+        <p>Voor het laatst bewerkt op: <span class="highlight">¯\_(ツ)_/¯</span></p>
     </footer>
 </body>
 </html>
