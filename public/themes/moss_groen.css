@@ -6,3 +6,7 @@
     --text: #000000;
     --textbox: #ffffff;
 }
+
+.kader {
+    background-image: url('../images/kaders/kader_groengeel.png'), linear-gradient(to top, var(--secondary) 50%, var(--background) 100%);
+}

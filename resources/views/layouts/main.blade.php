@@ -12,22 +12,14 @@
 <body class="min-h-screen flex flex-col">
     @include('layouts.navbar')
 
-    <header class="py-6">
-        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            @yield('header')
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="flex-grow mx-auto w-full h-full  sm:max-w-md md:max-w-xl lg:max-w-5xl  p-1 overflow-y-auto">
             @yield('main')
-        </div>
     </main>
 
-    <footer class="text-center text-sm p-2 mt-8 shadow-inner">
-        <p>Gemaakt met Laravel</p>
-        <p>Uitgevoerd met Docker</p>
-        <p>Voor het laatst bewerkt op: <span class="highlight">24-7-2025</span></p>
+    <footer class="text-center text-sm p-2 shadow-inner border border-2">
+        <p>Gemaakt met: Laravel</p>
+        <p>Kleuren thema's: <a href="https://colorhunt.co/" target="_blank" class="highlight hover:underline">colorhunt.co</a></p>
+        <p>Voor het laatst bewerkt op: <span class="highlight">¯\_(ツ)_/¯</span></p>
     </footer>
 </body>
 </html>
