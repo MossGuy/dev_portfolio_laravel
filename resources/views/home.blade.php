@@ -29,38 +29,124 @@
     </section>
 
 
-    <section class="flex flex-col md:flex-row justify-between lg:justify-center lg:gap-[40px] items-start h-full my-2 p-4 rounded-lg shadow-lg">
-        {{-- Mobiel: normale select --}}
-        <select name="prog_talen" id="prog_talen" class="block md:hidden border-2 p-2 rounded-lg text-lg font-semibold w-full">
-            <option value="" selected disabled>Programmeertalen kennis</option>
-            <option value="html">HTML</option>
-            <option value="css">CSS</option>
-            <option value="php">PHP</option>
-            <option value="javascript">JavaScript</option>
-            <option value="laravel">Laravel</option>
-            <option value="tailwindcss">Tailwind CSS</option>
-            <option value="bootstrap">Bootstrap</option>
-            <option value="git">Git</option>
-            <option value="mysql">MySQL</option>
-            <option value="csharp">C#</option>
-        </select>
-
-        {{-- Desktop: always-open lijst --}}
-        <div class="hidden md:block w-full md:w-[240px]">
-            <p class="mb-2 text-lg font-semibold">Programmeertalen kennis</p>
-            <div class="h-[300px] overflow-y-auto border-1 rounded-lg p-2">
-                <!-- select element die permanent open is -->
-            </div>
-        </div>
-
-
-        {{-- Afbeelding/beoordeling --}}
-        <div class="w-[200px] aspect-square border p-2 rounded-lg flex flex-col items-center text-center">
-            <p class="my-auto">afbeelding</p>
-            <p class="mt-auto">beoordeling</p>
-            <p>toelichting</p>
-        </div>
-
+    <section class="my-2 p-4 rounded-lg shadow-lg text-center">
+        <h3 class="text-xl font-medium">Talen en frameworks waar ik bekent mee ben</h3>
+        <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+            <li class="font-semibold flex flex-col">
+                HTML
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                CSS
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                Bootstrap
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                Tailwind
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                Javascript
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                MySQL
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                PHP
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                <span>
+                    <i class="bi bi-stars highlight"></i>
+                    Laravel
+                    <i class="bi bi-stars highlight"></i>
+                </span>
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                C#
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                ASP.NET
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li class="font-semibold flex flex-col">
+                Git / Github
+                <span>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+        </ul>
     </section>
 
 
