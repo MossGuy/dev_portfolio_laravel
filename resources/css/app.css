@@ -43,7 +43,7 @@ main section {
     background-color: var(--secondary);
 }
 
-p, a, button, li {
+p, a, button, li, label, h3, h4, h5, h6 td, th {
     color: var(--text);
 }
 
