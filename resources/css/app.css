@@ -43,11 +43,11 @@ main section {
     background-color: var(--secondary);
 }
 
-p, a, button, li, label, h3, h4, h5, h6 td, th {
+p, a, button, li, label, h1, h2, h3, h4, h5, h6 td, th {
     color: var(--text);
 }
 
-h1, h2, .highlight {
+.highlight {
     color: var(--highlight);
 }
 

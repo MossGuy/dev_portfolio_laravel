@@ -3,29 +3,32 @@
 @section('main')
     <section class="kader my-5 px-4 rounded-lg flex flex-col md:flex-row justify-between lg:justify-center lg:gap-[40px] items-center">
         <img src="{{ asset('images/ik.jpg') }}" class="w-[280px] md:w-[200px] h-70 object-cover object-[center_70%] rounded-xl mt-2 mb-1 md:mb-14 border border-3" alt="Foto van mijzelf"/>
-        <ul class=" text-lg font-semibold p-4 md:mb-1 mb-10">
-            <li class="text-2xl font-semibold">Ik ben:</li>
-            <li>
-                <i class="bi bi-code-slash"></i>
-                <span class="highlight">Junior web developer</span>
-            </li>
-            <li>
-                <i class="bi bi-music-note-list"></i>
-                <span class="highlight">Muzikant</span>
-            </li>
-            <li>
-                <i class="bi bi-controller"></i>
-                <span class="highlight">Gamer</span>
-            </li>
-            <li>
-                <i class="bi bi-flower2"></i>
-                <span class="highlight">Planten verzorger</span>
-            </li>
-            <li>
-                <i class="bi bi-emoji-smile"></i>
-                <span class="highlight">Anime fan</span>
-            </li>
-        </ul>
+        <div>
+            <h3 class="text-3xl font-semibold">Hey, Ik ben <span class="highlight">Milan Pallas</span>!</h3>
+            <p>Ik ben:</p>
+            <ul class=" text-lg font-semibold p-4 md:mb-1 mb-10">
+                <li>
+                    <i class="bi bi-code-slash"></i>
+                    <span class="highlight">Junior web developer</span>
+                </li>
+                <li>
+                    <i class="bi bi-music-note-list"></i>
+                    <span class="highlight">Muzikant</span>
+                </li>
+                <li>
+                    <i class="bi bi-controller"></i>
+                    <span class="highlight">Gamer</span>
+                </li>
+                <li>
+                    <i class="bi bi-flower2"></i>
+                    <span class="highlight">Planten verzorger</span>
+                </li>
+                <li>
+                    <i class="bi bi-emoji-smile"></i>
+                    <span class="highlight">Anime fan</span>
+                </li>
+            </ul>
+        </div>
     </section>
 
 

@@ -5,7 +5,7 @@
     <section class="shadow-md flex justify-between items-center p-4">
         <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="{{ asset('images/mr_moss.png') }}" class="h-15" alt="Moss Logo" />
-            <h1 class="text-2xl font-semibold whitespace-nowrap">Moss productions</h1>
+            <h1 class="text-2xl font-semibold whitespace-nowrap highlight">Moss productions</h1>
         </a>
 
         <div class="flex items-center space-x-4 rtl:space-x-reverse">
