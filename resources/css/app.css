@@ -57,7 +57,7 @@ select, input, textarea {
 }
 
 /* classes */
-.border {
+.border, .border-t, .border-b, .border-l, .border-r {
     border-color: var(--secondary);
 }
 
@@ -67,6 +67,17 @@ select, input, textarea {
     background-position: bottom;
 }
 
+nav > section button {
+    /* overschrijvt de .border class */
+    border-color: var(--highlight) !important;
+    background-color: var(--background);
+}
+
+nav > section button:hover {
+    background-color: var(--highlight);
+    color: var(--background);
+    transition: 0.3s;
+}
 
 .kleur {
     background-color: var(--secondary);

@@ -33,7 +33,7 @@
 
 
     <section class="my-2 p-4 rounded-lg shadow-lg text-center">
-        <h3 class="text-xl font-medium">Talen en frameworks waar ik bekent mee ben</h3>
+        <h3 class="text-xl font-medium">Ervaring met talen en frameworks</h3>
         <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
             <li class="font-semibold flex flex-col">
                 HTML
@@ -101,7 +101,7 @@
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </span>
             </li>
@@ -114,8 +114,8 @@
                 <span>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </span>
             </li>

@@ -3,15 +3,17 @@
 <nav x-data="{ showFilters: false }">
     <!-- Header -->
     <section class="shadow-md flex justify-between items-center p-4">
-        <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{ asset('images/mr_moss.png') }}" class="h-15" alt="Moss Logo" />
-            <h1 class="text-2xl font-semibold whitespace-nowrap highlight">Moss productions</h1>
-        </a>
+        <div>
+            <!-- <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{{ asset('images/mr_moss.png') }}" class="h-15" alt="Moss Logo" />
+                <h1 class="text-2xl font-semibold whitespace-nowrap highlight">Moss portfolio</h1>
+            </a> -->
+        </div>
 
         <div class="flex items-center space-x-4 rtl:space-x-reverse">
             <button 
                 @click="showFilters = !showFilters" 
-                class="cursor-pointer font-medium hover:underline highlight"
+                class="cursor-pointer font-medium highlight p-1 px-4 border border-3 rounded-xl"
                 type="button"
             >
                 Kleuren Thema
@@ -46,8 +48,6 @@
                     class="w-36 kleur py-2 px-3 text-lg rounded hover:cursor-pointer hover:underline"
                 >
             @endforeach
-
-            {{-- <p class="bg-zinc-300 w-36">{{ session('theme') }}</p> --}}
         </form>
     </section>
 </nav>

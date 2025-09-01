@@ -16,10 +16,9 @@
             @yield('main')
     </main>
 
-    <footer class="text-center text-sm p-2 shadow-inner border border-2">
+    <footer class="text-center text-sm p-2 shadow-inner border-t border-t-2">
         <p>Gemaakt met: Laravel</p>
-        <p>Kleuren thema's: <a href="https://colorhunt.co/" target="_blank" class="highlight hover:underline">colorhunt.co</a></p>
-        <p>Voor het laatst bewerkt op: <span class="highlight">27-08-2025</span></p>
+        <p>Voor het laatst bewerkt op: <span class="highlight">1-09-2025</span></p>
     </footer>
 </body>
 </html>
