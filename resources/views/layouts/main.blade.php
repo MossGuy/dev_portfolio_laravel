@@ -16,9 +16,13 @@
             @yield('main')
     </main>
 
-    <footer class="text-center text-sm p-2 shadow-inner border-t border-t-2">
-        <p>Gemaakt met: Laravel</p>
-        <p>Voor het laatst bewerkt op: <span class="highlight">1-09-2025</span></p>
+    <footer class="text-center text-sm p-2 shadow-inner border-t border-t-2 text-xl flex flex-col md:flex-row justify-evenly lg:justify-evenly">
+        <div>
+            <p>Vind mij op:</p>
+            <p><a target="_blank" href="https://github.com/MossGuy"><i class="bi bi-github"></i> Github</a></p>
+            <p><a target="_blank" href="https://www.linkedin.com/in/milan-pallas-b719b0281/"><i class="bi bi-linkedin"></i> LinkedIn</a></p>
+        </div>
+        <p class="mt-auto">Voor het laatst bewerkt op: <span class="highlight">3-09-2025</span></p>
     </footer>
 </body>
 </html>
