@@ -1,4 +1,3 @@
-# Basis image
 FROM php:8.2-fpm
 
 # Install system dependencies + Postgres support
@@ -10,17 +9,17 @@ RUN apt-get update && apt-get install -y \
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
 
-# Install JS dependencies en build assets
-RUN npm install && npm run build
-
-# Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
 # Set working directory
 WORKDIR /var/www
 
 # Copy Laravel files
 COPY . .
+
+# Install JS dependencies en build assets
+RUN npm install && npm run build
+
+# Install Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
@@ -38,5 +37,5 @@ COPY ./nginx.conf /etc/nginx/sites-enabled/default
 # Expose port 80
 EXPOSE 80
 
-# Start PHP-FPM en Nginx + run migrations bij startup
-CMD php artisan migrate --force && php-fpm -F & nginx -g 'daemon off;'
+# CMD via klein entrypoint script (aan te maken)
+CMD ["sh", "/var/www/docker-entrypoint.sh"]
