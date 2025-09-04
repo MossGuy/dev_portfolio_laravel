@@ -27,5 +27,6 @@ COPY ./nginx.conf /etc/nginx/sites-enabled/default
 # Expose port 80 for Render
 EXPOSE 80
 
-# Start both PHP-FPM and Nginx
-CMD service php8.2-fpm start && nginx -g 'daemon off;'
+# Start PHP-FPM op de standaard poort en Nginx in foreground
+CMD php-fpm -F & nginx -g 'daemon off;'
+
