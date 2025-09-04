@@ -4,6 +4,9 @@ FROM php:8.2-fpm
 RUN apt-get update && apt-get install -y \
     git curl unzip libpq-dev libonig-dev libzip-dev zip nginx \
     && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip
+
+# Run migrations on container startup because no shell in render free
+CMD php artisan migrate --force && php-fpm -F & nginx -g 'daemon off;'
     
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
