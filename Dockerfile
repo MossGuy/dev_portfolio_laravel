@@ -1,9 +1,10 @@
 FROM php:8.2-fpm
 
-# Install system dependencies + Postgres support
+# Install system dependencies + Postgres + PHP extensies
 RUN apt-get update && apt-get install -y \
     git curl unzip libpq-dev libonig-dev libzip-dev zip nginx \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip
+    libpng-dev libjpeg-dev libfreetype6-dev libxml2-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip bcmath gd
 
 # Node & npm installeren
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
@@ -15,11 +16,11 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy dependency files (beter cachegedrag)
+# Copy dependency files (cache)
 COPY package*.json ./
 COPY composer*.json ./
 
-# Install JS dependencies en build assets
+# Install JS dependencies
 RUN npm install
 
 # Install PHP dependencies
@@ -34,9 +35,6 @@ RUN npm run build
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
-
-# Clear caches
-RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
 
 # Copy Nginx config
 COPY ./nginx.conf /etc/nginx/sites-enabled/default
