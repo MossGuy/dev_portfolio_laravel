@@ -1,8 +1,16 @@
 #!/bin/sh
 set -e
 
-echo "🚀 Running migrations..."
+echo "🚀 Running Laravel entrypoint..."
+
+# Clear en rebuild caches
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan cache:clear
+
+# Run migrations (force zodat het ook in production werkt)
 php artisan migrate --force || true
 
-echo "✅ Starting PHP-FPM and Nginx..."
+# Start PHP-FPM en Nginx
 php-fpm -F & nginx -g 'daemon off;'
