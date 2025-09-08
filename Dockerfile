@@ -23,11 +23,11 @@ COPY composer*.json ./
 # Install JS dependencies
 RUN npm install
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
-
 # Copy rest van de Laravel app
 COPY . .
+
+# Install PHP dependencies (nu artisan aanwezig is)
+RUN composer install --no-dev --optimize-autoloader
 
 # Build frontend assets
 RUN npm run build
