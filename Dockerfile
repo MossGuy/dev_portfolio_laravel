@@ -26,11 +26,14 @@ RUN npm install
 # Copy rest van de Laravel app
 COPY . .
 
-# Install PHP dependencies (nu artisan aanwezig is)
+# Install PHP dependencies (artisan moet aanwezig zijn)
 RUN composer install --no-dev --optimize-autoloader
 
-# Build frontend assets
-RUN npm run build
+# Build frontend assets in production mode
+RUN NODE_ENV=production npm run build
+
+# Debug: check dat public/build gevuld is
+RUN ls -lah public/build
 
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
