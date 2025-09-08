@@ -39,9 +39,6 @@ RUN ls -lah public/build
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
-# Copy Nginx config
-COPY ./nginx.conf /etc/nginx/sites-enabled/default
-
 # Copy entrypoint script en uitvoerbaar maken
 COPY ./docker-entrypoint.sh /var/www/docker-entrypoint.sh
 RUN chmod +x /var/www/docker-entrypoint.sh
