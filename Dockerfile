@@ -1,14 +1,10 @@
-FROM php:8.2-fpm
+FROM php:8.2-cli
 
-# Install system dependencies + Postgres + PHP extensies
+# System dependencies
 RUN apt-get update && apt-get install -y \
-    git curl unzip libpq-dev libonig-dev libzip-dev zip nginx \
-    libpng-dev libjpeg-dev libfreetype6-dev libxml2-dev \
+    git curl unzip libzip-dev zip libpng-dev libjpeg-dev libfreetype6-dev \
+    libonig-dev libxml2-dev nodejs npm \
     && docker-php-ext-install pdo pdo_mysql pdo_pgsql mbstring zip bcmath gd
-
-# Node & npm installeren
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs
 
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -16,35 +12,26 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy dependency files (cache)
-COPY package*.json ./
-COPY composer*.json ./
+# Copy dependency files first (cache)
+COPY composer.json composer.lock ./
+COPY package.json package-lock.json ./
 
-# Install JS dependencies
-RUN npm install
+# Install PHP + JS dependencies
+RUN composer install --no-dev --optimize-autoloader
+RUN npm ci
 
-# Copy rest van de Laravel app
+# Copy rest van de app
 COPY . .
 
-# Install PHP dependencies (artisan moet aanwezig zijn)
-RUN composer install --no-dev --optimize-autoloader
-
-# Build frontend assets in production mode
-RUN NODE_ENV=production npm run build
-
-# Debug: check dat public/build gevuld is
-RUN ls -lah public/build
+# Build frontend assets
+RUN npm run build
 
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
-# Copy entrypoint script en uitvoerbaar maken
-COPY ./docker-entrypoint.sh /var/www/docker-entrypoint.sh
-RUN chmod +x /var/www/docker-entrypoint.sh
+# Expose port Render verwacht
+EXPOSE 10000
 
-# Expose port 80
-EXPOSE 80
-
-# Start via entrypoint
-CMD ["sh", "/var/www/docker-entrypoint.sh"]
+# Start Laravel dev server op $PORT
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=10000"]
