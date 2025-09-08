@@ -25,14 +25,10 @@ RUN npm ci
 COPY . .
 
 # Build frontend assets
-RUN npm run build
-
-# Fix permissions
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
-    chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+RUN NODE_ENV=production npm run build
 
 # Expose port Render verwacht
 EXPOSE 10000
 
-# Start Laravel dev server op $PORT
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=10000"]
+# Start Laravel server
+CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=$PORT"]
