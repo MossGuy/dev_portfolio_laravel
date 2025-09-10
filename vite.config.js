@@ -6,8 +6,8 @@ import path from 'path';
 export default defineConfig({
     build: {
         outDir: 'public/build',
-        manifest: true,          // zorg dat manifest.json in public/build staat
-        emptyOutDir: true,       // verwijdert oude bestanden bij nieuwe build
+        manifest: 'manifest.json', // <─ forceer locatie direct in build/
+        emptyOutDir: true,
     },
     resolve: {
         alias: {
