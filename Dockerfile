@@ -23,7 +23,7 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm ci
 
 # Build frontend assets for production
-RUN NODE_ENV=production npm run build
+RUN NODE_ENV=production npm run build && ls -l public/build
 
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
