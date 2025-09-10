@@ -30,7 +30,7 @@ class SetTheme
         }
 
         // 3. Geen sessie of cookie → zet default thema
-        $defaultTheme = 'basic_white';
+        $defaultTheme = 'kantoor_grijs';
         $request->session()->put('theme', $defaultTheme);
         cookie()->queue('theme', $defaultTheme, 60 * 24 * 30); // 30 dagen
 
