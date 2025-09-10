@@ -24,7 +24,7 @@
     <!-- Thema-selector -->
     <section x-show="showFilters" x-transition x-cloak>
         <form 
-            action="{{ route('set-theme') }}" 
+            action="{{ secure_url(route('set-theme')) }}" 
             method="POST" 
             class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-evenly mt-4 mb-2 flex-wrap gap-y-2 font-semibold"
         >
