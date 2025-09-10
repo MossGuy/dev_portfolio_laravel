@@ -1,6 +1,6 @@
 <script src="https://unpkg.com/alpinejs" defer></script>
 
-<nav x-data="{ showFilters: false }" class="fixed top-0 left-0 w-full bg-white z-50">
+<nav x-data="{ showFilters: false }">
     <!-- Header -->
     <section class="shadow-md flex justify-between items-center p-4">
         <div>
@@ -32,7 +32,7 @@
 
             @php
                 $themes = [
-                    'Basis Wit', 
+                    'Kantoor Grijs', 
                     'Nacht Zwart', 
                     'Moss Groen', 
                     'Marine Blauw', 

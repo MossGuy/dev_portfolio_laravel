@@ -11,7 +11,7 @@ class ThemeController extends Controller
         $theme = strtolower($request->input('theme'));
 
         // optioneel: validatie
-        $validThemes = ['basis wit', 'nacht zwart', 'moss groen', 'marine blauw', 'perzik roze'];
+        $validThemes = ['kantoor grijs', 'nacht zwart', 'moss groen', 'marine blauw', 'perzik roze'];
         if (!in_array($theme, $validThemes)) {
             abort(400, 'Ongeldig thema');
         }
