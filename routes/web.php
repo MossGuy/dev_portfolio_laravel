@@ -9,4 +9,6 @@ use App\Http\Controllers\ThemeController;
 
 Route::view('/', 'home')->middleware('theme.set');
 
-Route::post('/set-theme', [ThemeController::class, 'set'])->name('set-theme');
+Route::group(['scheme' => 'https'], function () {
+    Route::post('/set-theme', [ThemeController::class, 'set'])->name('set-theme');
+});
