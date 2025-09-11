@@ -1,7 +1,5 @@
-# =========================
-# Stage 1: Build
-# =========================
-FROM php:8.2-cli AS build
+# Base image
+FROM php:8.2-cli
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -26,7 +24,7 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm ci
 
 # Build frontend assets for production
-RUN NODE_ENV=production npm run build
+RUN NODE_ENV=production npm run build && ls -l public/build
 
 # Clear & cache Laravel stuff
 RUN php artisan config:clear && \
@@ -40,17 +38,6 @@ RUN php artisan config:clear && \
 # Fix permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
-
-# =========================
-# Stage 2: Production
-# =========================
-FROM php:8.2-cli
-
-# Set working directory
-WORKDIR /var/www
-
-# Copy only necessary files from build stage
-COPY --from=build /var/www /var/www
 
 # Expose port for Render
 EXPOSE 10000
