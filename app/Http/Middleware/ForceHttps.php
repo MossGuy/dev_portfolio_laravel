@@ -16,14 +16,8 @@ class ForceHttps
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Alleen in productie forceren
-        if (app()->environment('production')) {
-            URL::forceScheme('https');
-
-            // Optioneel: als iemand per ongeluk via http komt, redirect naar https
-            if (!$request->secure()) {
-                return redirect()->secure($request->getRequestUri());
-            }
+        if (!$request->secure() && in_array(env('APP_ENV'), ['stage', 'production'])) {
+            return redirect()->secure($request->getRequestUri());
         }
 
         return $next($request);
