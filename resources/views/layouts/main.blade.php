@@ -7,7 +7,7 @@
     <!-- css link -->
     @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="{{ asset('themes/' . strtolower(session('theme') ?? 'basis wit') . '.css') }}">
-    <title>Main</title>
+    <title>Milan Pallas | web portfolio</title>
 </head>
 <body class="min-h-screen flex flex-col">
     @include('layouts.navbar')
@@ -22,7 +22,7 @@
             <p><a target="_blank" href="https://github.com/MossGuy"><i class="bi bi-github"></i> Github</a></p>
             <p><a target="_blank" href="https://www.linkedin.com/in/milan-pallas-b719b0281/"><i class="bi bi-linkedin"></i> LinkedIn</a></p>
         </div>
-        <p class="mt-auto">Voor het laatst bewerkt op: <span class="highlight">3-09-2025</span></p>
+        <p class="mt-auto">Voor het laatst bewerkt op: <span class="highlight">11-09-2025</span></p>
     </footer>
 </body>
 </html>
