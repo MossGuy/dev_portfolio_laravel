@@ -32,7 +32,7 @@
 
             @php
                 $themes = [
-                    'Kantoor Grijs', 
+                    'Basis Wit',
                     'Nacht Zwart', 
                     'Moss Groen', 
                     'Marine Blauw', 
