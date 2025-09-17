@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- website informatie -->
+    <meta name="description" content="Bijna elke ontwikkelaar heeft een web portfolio. Dit is een leuke website om kennis te maken met de persoon en waar hij / zei goed in is. Dit is die van mij :)">
     <!-- css link -->
     @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="{{ asset('themes/' . strtolower(session('theme') ?? 'basis wit') . '.css') }}">
