@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <i class="bi bi-flower2"></i>
-                    <span class="highlight">Planten verzorger</span>
+                    <span class="highlight">Planten liefhebber</span>
                 </li>
                 <li>
                     <i class="bi bi-emoji-smile"></i>
