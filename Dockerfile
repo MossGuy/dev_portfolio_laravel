@@ -23,4 +23,20 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm ci
 
 # Build frontend assets for production
-RUN
+RUN NODE_ENV=production npm run build && ls -l public/build
+
+# Fix permissions
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
+    chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+
+# Copy and enable the entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
+# Expose port for Render
+EXPOSE 10000
+
+# Start Laravel server on the port Render provides
+CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=$PORT"]
