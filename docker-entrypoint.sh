@@ -14,3 +14,6 @@ php artisan migrate --force || true
 
 # Start PHP-FPM en Nginx
 php-fpm -F & nginx -g 'daemon off;'
+
+# Start Laravel server
+php artisan serve --host=0.0.0.0 --port=$PORT
