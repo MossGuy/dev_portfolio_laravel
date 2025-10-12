@@ -13,7 +13,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www
 
-# Copy all files (artisan must exist before composer install)
+# Copy all files
 COPY . .
 
 # Install PHP dependencies
@@ -29,8 +29,15 @@ RUN NODE_ENV=production npm run build && ls -l public/build
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
+# Copy entrypoint and make it executable
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Use entrypoint
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
 # Expose port for Render
 EXPOSE 10000
 
-# Start Laravel server on the port Render provides
+# Start Laravel server
 CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=$PORT"]
