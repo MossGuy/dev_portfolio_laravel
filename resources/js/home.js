@@ -4,7 +4,7 @@ const programmeerkennis = {
     description: `Ik kan een nette HTML-structuur aanhouden door middel van de elementen nav, main, footer en section. Ik ben bekend met de basiselementen zoals linkjes, afbeeldingen, formulieren en tabellen. Ook ben ik bekend met favicon-icoontjes. 
      
     Als ik een webpagina ga maken, denk ik altijd zorgvuldig na over de layout volgens het mobile-first principe.`,
-    image: "HTML5.png"
+    images: ["HTML5.png"]
   },
 
   cssFramework: {
@@ -14,15 +14,19 @@ const programmeerkennis = {
 
         Aan de hand van documentatie kan ik met framsworks als Bootstrap5 en Tailwind een basisopmaak verzorgen. 
         Mijn voorkeur gaat uit naar Tailwind, maar Bootstrap blijft mijn go-to framework als ik icons wil toevoegen.`,
-    image: "CSS3.png",
-    image2: "css-framework.png"
+    images: [
+      "CSS3.png",
+      "Bootstrap5.png",
+      "Tailwind.png"
+    ]
+
   },
 
   javascript: {
     title: "JavaScript",
     description: `Mijn JavaScript-kennis is niet heel uitgebreid. 
         Ik ben bekend met de basis zoals functies en HTML-element selectors.`,
-    image: "Javascript.png"
+    images: ["Javascript.png"]
   },
 
   php: {
@@ -30,14 +34,14 @@ const programmeerkennis = {
     description: `Ik heb met veel verschillende PHP-componenten gewerkt in samenstelling met HTML via XAMPP en Laravel, zoals sessions, JSON-bestanden en API's verwerken en PDO-databaseverbindingen. 
         Ook heb ik PHP gebruikt om de basis van objectgeoriënteerd programmeren te leren. 
         Functies in PHP kan ik duidelijk structureren door middel van comments.`,
-    image: "PHP.png"
+    images: ["PHP.png"]
   },
 
   sql: {
     title: "MySQL",
     description: `Aan de hand van documentatie kan ik basisdatabase-structuren maken met programma's als MySQL via XAMPP. 
         Ik ben enigszins bekend met relationele database-structuren, maar SQL-joins vind ik nog moeilijk te begrijpen.`,
-    image: "MySQL.png"
+    images: ["MySQL.png"]
   },
 
   laravel: {
@@ -46,18 +50,18 @@ const programmeerkennis = {
         Ik vind de Blade-templates erg fijn om mee te werken en zo views overzichtelijk op te bouwen door middel van layouts.  
         Ik kan werken met basisroutes, formulieren en de ingebouwde databasestructuur.  
         Verder ben ik bekend met middleware, de cache en logfuncties.`,
-    image: "Laravel.png"
+    images: ["Laravel.png"]
   },
   Csharp: {
     title: "C#",
     description: `Naast de basis syntax heb ik C# gebruikt om kennis te maken met objectgeoriënteerd programmeren. 
       `,
-    image: "Csharp.png"
+    images: ["Csharp.png"]
   },
   AspDotNet: {
     title: "ASP.NET",
     description: `Ik wijger om die bloat ooit nog aan te raken al geef je mij een duidelijke handleiding`,
-    image: "AspDotNet.png"
+    images: ["AspDotNet.png"]
   }
 };
 
@@ -77,11 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = programmeerkennis[key];
 
       if (data) {
-        const image2 = data.image2 ?? '';
-        const image2element = image2
-          ? `<img src="${basePath}/${data.image2}" alt="Framework Logo" class="w-20 h-20 object-contain mx-auto lg:mx-0">`
-          : '';
-
         const isAspNet = data.title === "ASP.NET";
         const baseClasses =
           "p-6 mt-6 animate-fadeIn max-w-5xl mx-auto flex flex-col items-center justify-center gap-8";
@@ -94,21 +93,31 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
         `;
 
-        // ja, mijn haat voor asp.net is echt zo diep
+        // Meerdere afbeeldingen dynamisch genereren
+        const imageElements = (data.images ?? [])
+          .map(
+            (img, i) => `
+              <img src="${basePath}/${img}" alt="${data.title} afbeelding ${i + 1}"
+                class="w-24 h-24 lg:w-32 lg:h-32 object-contain mx-auto lg:mx-0">
+            `
+          )
+          .join("");
+
+        // HTML opbouw
         const contentHTML = isAspNet
           ? `
               <div class="${baseClasses}">
-                <img src="${basePath}/${data.image}" alt="${key}" class="w-40 h-40 object-contain my-4">
+                ${imageElements}
                 ${backButtonHTML}
               </div>
             `
           : `
               <div class="${baseClasses} lg:flex-row lg:items-start">
-                
                 <!-- Afbeeldingen -->
-                <div class="flex flex-col justify-center items-center my-auto flex-shrink-0 text-center w-full lg:w-1/3">
-                  <img src="${basePath}/${data.image}" alt="${key}" class="w-40 h-40 object-contain my-4">
-                  ${image2element}
+                <div class="bg-[var(--primary)] rounded-xl shadow-lg flex flex-col justify-center items-center my-auto flex-shrink-0 text-center w-full lg:w-1/3 p-6">
+                  <div class="flex flex-wrap justify-center items-center gap-4">
+                    ${imageElements}
+                  </div>
                 </div>
 
                 <!-- Tekst -->
@@ -122,10 +131,10 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
             `;
 
-        // Content bijwerken
+        // Injecteren in de pagina
         ervaringBody.innerHTML = contentHTML;
 
-        // Backbutton registreren
+        // Terugknop functionaliteit
         const backButton = document.getElementById("backButton");
         backButton.addEventListener("click", () => {
           ervaringBody.innerHTML = originalContent;
@@ -136,4 +145,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
   });
+  
 });
