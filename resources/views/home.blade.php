@@ -32,10 +32,10 @@
     </section>
 
 
-    <section class="my-2 p-4 rounded-lg shadow-lg text-center">
+    <section class="my-2 p-4 rounded-lg shadow-lg text-center" id="ervaring_body">
         <h3 class="text-xl font-medium">Ervaring met talen en frameworks</h3>
         <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-            <li class="font-semibold flex flex-col">
+            <li data-skill="html5" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
                 HTML
                 <span>
                     <i class="bi bi-star-fill"></i>
@@ -45,112 +45,85 @@
                     <i class="bi bi-star"></i>
                 </span>
             </li>
-            <li class="font-semibold flex flex-col">
-                CSS
-                <span>
-                    <i class="bi bi-star-fill"></i>
+            <li data-skill="cssFramework" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
+                CSS / Frameworks
+                <span> <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </span>
             </li>
-            <li class="font-semibold flex flex-col">
-                Bootstrap
-                <span>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li class="font-semibold flex flex-col">
-                Tailwind
-                <span>
-                    <i class="bi bi-star-fill"></i>
+            <li data-skill="javascript" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
+                JavaScript
+                <span> <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </span>
             </li>
-            <li class="font-semibold flex flex-col">
-                Javascript
-                <span>
+            <li data-skill="php" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
+                PHP
+                <span> <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </span>
             </li>
-            <li class="font-semibold flex flex-col">
-                MySQL
-                <span>
+            <li data-skill="sql" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
+                SQL
+                <span> <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-half"></i>
                     <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
                 </span>
             </li>
-            <li class="font-semibold flex flex-col">
-                PHP
-                <span>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li class="font-semibold flex flex-col">
+            <li data-skill="laravel" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
                 <span>
                     <i class="bi bi-stars highlight"></i>
                     Laravel
                     <i class="bi bi-stars highlight"></i>
                 </span>
-                <span>
+                <span> <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                </span>
+            </li>
+            <li data-skill="Csharp" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
+                C#
+                <span> 
                     <i class="bi bi-star-fill"></i>
                     <i class="bi bi-star-half"></i>
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </span>
             </li>
-            <li class="font-semibold flex flex-col">
-                C#
-                <span>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li class="font-semibold flex flex-col">
+            <li data-skill="AspDotNet" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition border-[var(--secondary)] hover:border-[var(--primary)] border-2 rounded-lg p-1">
                 ASP.NET
                 <span>
-                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i> 
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                     <i class="bi bi-star"></i>
                 </span>
-            </li>
-            <li class="font-semibold flex flex-col">
-                Git / Github
-                <span>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
+
             </li>
         </ul>
+
+
+
+        <!-- Base url opslaan voor de afbeelding -->
+        <script>
+            window.assetPath = "{{ asset('images/prog_talen') }}";
+        </script>
+
+        <!-- De rest van de javascript - json object en eventListener -->
+        @vite('resources/js/home.js')
     </section>
-
-
 @endsection
