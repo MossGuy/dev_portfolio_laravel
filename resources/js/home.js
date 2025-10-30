@@ -95,15 +95,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Meerdere afbeeldingen dynamisch genereren
         const imageElements = (data.images ?? [])
-          .map(
-            (img, i) => `
-              <img src="${basePath}/${img}" alt="${data.title} afbeelding ${i + 1}"
-                class="w-24 h-24 lg:w-32 lg:h-32 object-contain mx-auto lg:mx-0">
-            `
-          )
-          .join("");
+  .map((img, i) => {
+    // Maak de eerste afbeelding groter
+    const sizeClass =
+        i === 0
+          ? "w-40 h-40 lg:w-48 lg:h-48" // grotere afbeelding
+          : "w-20 h-20 lg:w-28 lg:h-28"; // kleinere voor de rest
 
-        // HTML opbouw
+      return `
+        <img src="${basePath}/${img}" 
+            alt="${data.title} afbeelding ${i + 1}"
+            class="${sizeClass} object-contain mx-auto lg:mx-0 transition-transform duration-300 hover:scale-105">
+      `;
+    })
+    .join("");
+
+
+
+        // Ja, mijn haat voor ASP.NET zo diep
         const contentHTML = isAspNet
           ? `
               <div class="${baseClasses}">
