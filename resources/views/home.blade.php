@@ -32,98 +32,76 @@
     </section>
 
 
-    <section class="my-2 p-4 rounded-lg shadow-lg text-center" id="ervaring_body">
-        <h3 class="text-xl font-medium">Ervaring met talen en frameworks</h3>
-        <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
-            <li data-skill="html5" class="skill font-semibold flex flex-col cursor-pointer transition rounded-lg p-1 hover:bg-[var(--highlight)] hover:shadow-lg">
-                HTML
-                <span>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li data-skill="cssFramework" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition hover:bg-[var(--highlight)] rounded-lg p-1 hover:shadow-lg">
-                CSS / Frameworks
-                <span> <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li data-skill="javascript" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition hover:bg-[var(--highlight)] rounded-lg p-1 hover:shadow-lg">
-                JavaScript
-                <span> <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li data-skill="php" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition hover:bg-[var(--highlight)] rounded-lg p-1 hover:shadow-lg">
-                PHP
-                <span> <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li data-skill="sql" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition hover:bg-[var(--highlight)] rounded-lg p-1 hover:shadow-lg">
-                SQL
-                <span> <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li data-skill="laravel" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition hover:bg-[var(--highlight)] rounded-lg p-1 hover:shadow-lg">
-                <span>
-                    <i class="bi bi-stars highlight"></i>
-                    Laravel
-                    <i class="bi bi-stars highlight"></i>
-                </span>
-                <span> <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li data-skill="Csharp" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition hover:bg-[var(--highlight)] rounded-lg p-1 hover:shadow-lg">
-                C#
-                <span> 
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
-            </li>
-            <li data-skill="AspDotNet" class="skill font-semibold flex flex-col cursor-pointer hover:text-blue-500 transition hover:bg-[var(--highlight)] rounded-lg p-1 hover:shadow-lg">
-                ASP.NET
-                <span>
-                    <i class="bi bi-star-fill"></i> 
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                </span>
+    <section 
+    x-data="programmeerkennisComponent()" 
+    class="my-2 p-4 rounded-lg shadow-lg text-center"
+>
+    <!-- Overzicht met programmeerkennis -->
+    <template x-if="!selected">
+        <div>
+            <h3 class="text-xl font-medium">Ervaring met talen en frameworks</h3>
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+                <template x-for="(data, key) in skills" :key="key">
+                    <li 
+                        @click="selectSkill(key)"
+                        class="skill font-semibold flex flex-col cursor-pointer transition rounded-lg p-1 hover:bg-[var(--highlight)] hover:shadow-lg"
+                    >
+                        <span x-html="highlightTitle(data.title)"></span>
+                        <span>
+                            <template x-for="i in starsTotal">
+                                <i 
+                                    class="bi"
+                                    :class="starType(i, data.stars)"
+                                ></i>
+                            </template>
+                        </span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
 
-            </li>
-        </ul>
+    <!-- Detailweergave -->
+    <template x-if="selected">
+        <div 
+            x-transition
+            class="p-6 mt-6 animate-fadeIn max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-8"
+        >
+            <!-- Afbeeldingen -->
+            <div 
+                class="bg-[var(--primary)] rounded-xl shadow-lg flex flex-col justify-center items-center my-auto flex-shrink-0 text-center w-full lg:w-1/3 p-6"
+            >
+                <div class="flex flex-wrap justify-center items-center gap-4">
+                    <template x-for="(img, i) in selected.images" :key="i">
+                        <img 
+                            :src="`${assetPath}/${img}`"
+                            :alt="`${selected.title} afbeelding ${i+1}`"
+                            class="object-contain mx-auto lg:mx-0 transition-transform duration-300 hover:scale-105"
+                            :class="i === 0 ? 'w-40 h-40 lg:w-48 lg:h-48' : 'w-20 h-20 lg:w-28 lg:h-28'"
+                        >
+                    </template>
+                </div>
+            </div>
 
+            <!-- Tekst -->
+            <div class="flex flex-col justify-center w-full lg:w-2/3">
+                <h3 class="text-3xl font-bold text-[var(--highlight)] mb-4" x-text="selected.title"></h3>
+                <p class="whitespace-pre-line text-gray-700 dark:text-gray-300 text-justify leading-relaxed text-lg mb-8" x-text="selected.description"></p>
+                <button 
+                    @click="selected = null"
+                    class="mx-auto w-fit items-center gap-2 px-5 py-2 border-2 border-[var(--primary)]
+                        bg-[var(--background)] hover:bg-[var(--highlight)] text-[var(--primary)]
+                        hover:text-white rounded-lg font-semibold transition duration-200"
+                >
+                    <i class="bi bi-x-lg"></i> Sluiten
+                </button>
+            </div>
+        </div>
+    </template>
+</section>
 
-
-        <!-- Base url opslaan voor de afbeelding -->
-        <script>
-            window.assetPath = "{{ asset('images/prog_talen') }}";
-        </script>
-
-        <!-- De rest van de javascript - json object en eventListener -->
-        @vite('resources/js/home.js')
-    </section>
+    <!-- Base url opslaan van de afbeelding voor home.js -->
+    <script defer>
+        window.assetPath = "{{ asset('images/prog_talen') }}";
+    </script>
 @endsection

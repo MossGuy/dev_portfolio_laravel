@@ -6,9 +6,11 @@
 
     <!-- website informatie -->
     <meta name="description" content="Bijna elke ontwikkelaar heeft een web portfolio. Dit is een leuke website om kennis te maken met de persoon en waar hij / zei goed in is. Dit is die van mij :)">
-    <!-- css link -->
-    @vite(['resources/css/app.css'])
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
     <link rel="stylesheet" href="{{ asset('themes/' . strtolower(session('theme') ?? 'basis wit') . '.css') }}">
+    <!-- alpine link -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.1/dist/cdn.min.js"></script> -->
     <title>Milan Pallas | web portfolio</title>
 </head>
 <body class="min-h-screen flex flex-col">
