@@ -100,7 +100,6 @@ document.addEventListener('alpine:init', () => {
       },
 
       starType(i, rating) {
-        console.log('methode gestart');
             if (rating >= i) return 'bi-star-fill';        // volle ster
             if (rating >= i - 0.5) return 'bi-star-half';  // halve ster
             return 'bi-star';                              // lege ster
