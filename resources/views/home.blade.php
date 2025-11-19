@@ -89,9 +89,9 @@
                 <p class="whitespace-pre-line text-gray-700 dark:text-gray-300 text-justify leading-relaxed text-lg mb-8" x-text="selected.description"></p>
                 <button 
                     @click="selected = null"
-                    class="mx-auto w-fit items-center gap-2 px-5 py-2 border-2 border-[var(--primary)]
+                    class="mx-auto w-fit items-center gap-2 px-5 py-2
                         bg-[var(--background)] hover:bg-[var(--highlight)] text-[var(--primary)]
-                        hover:text-white rounded-lg font-semibold transition duration-200"
+                        hover:text-white rounded-lg font-semibold transition duration-300"
                 >
                     <i class="bi bi-x-lg"></i> Sluiten
                 </button>

@@ -26,8 +26,12 @@ window.programmeerkennis = {
   javascript: {
     title: "JavaScript",
     description: `Mijn JavaScript-kennis is niet heel uitgebreid. 
-        Ik ben bekend met de basis zoals functies en HTML-element selectors.`,
-    images: ["Javascript.png"],
+        Ik ben bekend met de basis zoals functies en HTML-element selectors.
+        Daarnaast ben ik bekent met de basis functionaliteiten van Alpine.js.`,
+    images: [
+      "Javascript.png",
+      "Alpinejs.png"
+    ],
     stars: 2
   },
 
