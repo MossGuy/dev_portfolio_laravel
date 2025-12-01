@@ -70,7 +70,7 @@ window.programmeerkennis = {
   },
   AspDotNet: {
     title: "ASP.NET",
-    description: `Ik wijger om die bloat ooit nog aan te raken al geef je mij een duidelijke handleiding`,
+    description: `Niet echt mijn ding.`,
     images: ["AspDotNet.png"],
     stars: 1
   }
